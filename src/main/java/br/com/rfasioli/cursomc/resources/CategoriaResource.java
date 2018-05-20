@@ -1,6 +1,8 @@
 package br.com.rfasioli.cursomc.resources;
 
 import java.net.URI;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import br.com.rfasioli.cursomc.domain.Categoria;
+import br.com.rfasioli.cursomc.dto.CategoriaDTO;
 import br.com.rfasioli.cursomc.services.CategoriaService;
 
 @RestController
@@ -47,4 +50,11 @@ public class CategoriaResource {
 		return ResponseEntity.noContent().build();
 	}
 
+	@RequestMapping(method=RequestMethod.GET)
+	public ResponseEntity<List<CategoriaDTO>> findAll() {
+		List<Categoria> lista = service.findAll();
+		List<CategoriaDTO> listDto = lista.stream().map(obj -> new CategoriaDTO(obj)).collect(Collectors.toList());
+		return ResponseEntity.ok(listDto);
+	}
+	
 }
