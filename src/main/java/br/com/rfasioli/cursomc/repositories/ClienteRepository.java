@@ -10,9 +10,9 @@ import br.com.rfasioli.cursomc.domain.Cliente;
 public interface ClienteRepository extends JpaRepository<Cliente, Integer>{
 
 	@Transactional(readOnly=true)
-	Cliente findByEmail(String email);
+	long countByEmail(String email);
 	
 	@Transactional(readOnly=true)
-	long countByEmail(String email);
+	long countByIdNotAndEmail(Integer id, String email);
 	
 }
