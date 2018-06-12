@@ -15,6 +15,7 @@ import br.com.rfasioli.cursomc.domain.enums.EstadoPagamento;
 import br.com.rfasioli.cursomc.repositories.ItemPedidoRepository;
 import br.com.rfasioli.cursomc.repositories.PagamentoRepository;
 import br.com.rfasioli.cursomc.repositories.PedidoRepository;
+import br.com.rfasioli.cursomc.services.email.EmailService;
 import br.com.rfasioli.cursomc.services.exception.ObjectNotFoundException;
 
 @Service

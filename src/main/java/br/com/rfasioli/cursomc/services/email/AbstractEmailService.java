@@ -1,4 +1,4 @@
-package br.com.rfasioli.cursomc.services;
+package br.com.rfasioli.cursomc.services.email;
 
 import java.util.Date;
 
