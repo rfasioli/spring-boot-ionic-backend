@@ -1,6 +1,7 @@
 package br.com.rfasioli.cursomc.config;
 
-import org.assertj.core.util.Arrays;
+import java.util.Arrays;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
