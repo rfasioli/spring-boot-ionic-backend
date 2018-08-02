@@ -14,7 +14,7 @@ public class JWTUtil {
 	@Value("${jwt.secret}")
 	private String secret;
 	
-	@Value("${jwt.expiration=60000}")
+	@Value("${jwt.expiration}")
 	private Long expiration;
 	
 	public String generateToken(String username) {
