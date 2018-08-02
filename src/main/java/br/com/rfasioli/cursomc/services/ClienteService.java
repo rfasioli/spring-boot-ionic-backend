@@ -40,6 +40,12 @@ public class ClienteService {
 				"Objeto não encontrado! Id: " + id + ", Tipo: " + Cliente.class.getName()));
 	}
 
+	public Cliente findByEmail (String email) throws ObjectNotFoundException {
+		Optional<Cliente> obj = repo.findByEmail(email);
+		return obj.orElseThrow(() -> new ObjectNotFoundException(
+				"Objeto não encontrado! email: " + email + ", Tipo: " + Cliente.class.getName()));
+	}
+
 	public Cliente insert(Cliente obj) {
 		obj.setId(null);
 		obj = repo.save(obj);
